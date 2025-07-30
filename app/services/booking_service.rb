@@ -18,6 +18,7 @@ class BookingService
 
         if @booking.save
             #  Success! Return the :success symbol and the newly created object.
+            EventReminderjobJob.set(wait_until: @event.start_time - 24.hours).perform_later(@booking.id)
             [:success, @booking]
         else
             #  Failed for other reason (Validations)
