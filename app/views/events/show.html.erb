@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Name:</strong>
+    <%= @event.name %>
+</p>
+
+<p>
+    <strong>Description:</strong>
+    <%= @event.description %>
+</p>
+
+<p>
+    <strong>Start time:</strong>
+    <%= @event.start_time %>
+</p>
+
+<p>
+    <strong>End time:</strong>
+    <%= @event.end_time %>
+</p>
+
+<p>
+    <strong>Venue:</strong>
+    <%= @event.venue.name %>
+</p>
+
+<p>
+    <strong>User:</strong>
+    <%= @event.user.name %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event), class: "btn btn-warning" %> |
+<%= link_to 'Back', events_path, class:"btn btn-secondary" %> |
+<%= button_to "Book this Event", event_bookings_path(@event), method: :post, class: "btn btn-success" %>

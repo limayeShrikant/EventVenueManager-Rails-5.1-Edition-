@@ -1,0 +1,20 @@
+<h1>Your Bookings </h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Event</th>
+            <th> Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% @bookings.each_with_index do |booking,index|%>
+            <td><%= index + 1%></td>
+            <td><%= link_to booking.event.name, event_path(booking.event.id) %></td>
+            <td><%= booking.status %></td>
+            <% end %>
+        </tr>
+    </tbody>
+</table>

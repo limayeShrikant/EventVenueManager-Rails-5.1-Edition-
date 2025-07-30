@@ -1,1 +1,14 @@
 <h1>Welcomes To Event Manager Application</h1>
+
+<% if user_signed_in? %>
+<%if current_user.admin? %>
+<%= link_to "Add Event", new_event_path, class: "btn btn-success" %> |
+<%= link_to "View Your Events", events_path, class: "btn btn-warning" %> |
+<%= link_to "View Your Bookings", bookings_index_path, class: "btn btn-danger"%>
+<% else %>
+<%= link_to "View Your Events", events_path, class: "btn btn-warning" %> |
+<%= link_to "View Your Bookings", bookings_index_path, class: "btn btn-danger"%>
+<% end %>
+|
+<%= link_to "Venues", venues_path, class: "btn btn-info"  %>
+<% end %>

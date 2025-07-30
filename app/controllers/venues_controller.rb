@@ -25,7 +25,7 @@ class VenuesController < ApplicationController
 
   # POST /venues or /venues.json
   def create
-    @venue = current_user.venues.new(venue_params)
+    @venue = current_user.venues.build(venue_params)
     authorize @venue
 
     respond_to do |format|
