@@ -30,5 +30,6 @@
     <%= @event.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Edit', edit_event_path(@event), class: "btn btn-warning" %> |
+<%= link_to 'Back', events_path, class:"btn btn-secondary" %> |
+<%= button_to "Book this Event", event_bookings_path(@event), method: :post, class: "btn btn-success" %>

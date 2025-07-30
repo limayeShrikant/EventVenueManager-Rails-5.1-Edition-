@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_event, only: %i[ show edit update destroy ]
 
   # GET /events or /events.json
@@ -12,7 +13,7 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
-    authorize @event
+    
   end
 
   # GET /events/new
